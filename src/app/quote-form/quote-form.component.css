@@ -1,0 +1,8 @@
+*{
+  background-color: rgb(141, 136, 129);
+}
+.container-fluid{
+  margin-left: 45em;
+  position: relative;
+  bottom: 29em; 
+}

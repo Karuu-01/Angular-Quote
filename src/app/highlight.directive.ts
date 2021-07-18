@@ -1,16 +1,19 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Directive({
   selector: '[appHighlight]'
 })
 export class HighlightDirective {
-  constructor(private el: ElementRef) {
-    el.nativeElement.style.backgroundColor = 'yellow'
-   }
+
+  constructor(private el: ElementRef) { }
+    @Input() defaultColor = '';
+
+    @Input('appHighlight') highlightColor = '';
+   
 
    @HostListener('mousenter') onMouseEnter() {
-     this.highlight('yellow')
+     this.highlight(this.highlightColor || this.defaultColor || 'red')
    }
    @HostListener('mouseleave') onMouseLeave() {
     this.highlight(' ')
@@ -20,5 +23,5 @@ export class HighlightDirective {
     this.el.nativeElement.style.backgroundColor = color;
   }
 
-
+  
 }

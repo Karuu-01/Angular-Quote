@@ -1,10 +1,21 @@
-<h1>Favourite Quotes And Authors</h1>
-<hr>
-<ul>
-  <div *ngFor='let quote of quote;let i = index'>
-    <li>{{quote.name}}</li>
-    <button (click)='toggleDetails(i)'>Toggle Details</button>
-    <app-quote-details *ngIf='quote.showDescription' [quote]='quote' (isWritten) = 'writtenQuote($event,i)'></app-quote-details>
+<div class="container">
+  <h1>Favourite Quotes And Authors</h1>
+  <hr />
+  <div class="row">
+    <div class="col-md-6">
+        <div *ngFor="let quote of quotes; let i = index">
+          <h4 id={{i}} appHighlight>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
+          <button (click)="toggleDetails(i)" class="btn btn-primary">Toggle Details</button>
+          <app-quote-details
+            *ngIf="quote.showDescription"
+            [quote]="quote"
+            (isWritten)="writtenQuote($event, i)"
+          ></app-quote-details>
+        </div>
+      <p *ngIf="quotes.length > 5">You have too many quotes</p>
+    </div>
   </div>
-</ul>
-<p *ngIf='quote.length > 5'>You have too many quotes</p>
+  <div class="col-md-6">
+    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+  </div>
+</div>

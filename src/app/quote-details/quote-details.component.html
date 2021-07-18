@@ -1,4 +1,5 @@
 <p>
   {{quote.description}}
 </p>
-<button (click)= 'quoteWritten(true)'>Remove Quote</button>
+<p>This Quote was said on {{quote.completeDate|dateCount}} days</p>
+<button (click)= 'quoteWritten(true)' class="btn btn-outline-danger">Remove Quote</button>

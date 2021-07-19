@@ -1,8 +1,12 @@
 *{
-  background-color: rgb(141, 136, 129);
+  background-color: rgb(56, 188, 228);
 }
 .container-fluid{
-  margin-left: 45em;
+  margin-left: 57em;
   position: relative;
-  bottom: 29em; 
+  bottom: 50em; 
+}
+button{
+  color: #0c0e0d;
+  background-color: #eee;
 }

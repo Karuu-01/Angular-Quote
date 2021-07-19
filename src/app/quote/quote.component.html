@@ -1,30 +1,38 @@
 <div class="container">
   <h1>Favourite Quotes And Authors</h1>
   <hr />
-
+  
+  <div class="col-md-8 col-lg-8 col-sm-12">
   <div class="row">
-    <div class="col-md-6">
-      <div *ngFor="let quote of quotes; let i = index">
+      <div class="col-md-6 col-lg-6 col-sm-12" *ngFor="let quote of quotes; let i = index">
+        <div class="quote-card">
+        <div class="quote-header">
         <h6 id="{{ i }}" appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">{{ quote.name }} due on {{ quote.completeDate | date | uppercase }}</h6>
         <p *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">{{ quote.name }} due on {{quote.completeDate | date | uppercase }}</p>
         <button (click)="toggleDetails(i)" class="btn btn-primary">
           Toggle Details
         </button>
-
-        <app-quote-details *ngIf="quote.showDescription" [quote]="quote" ></app-quote-details>
-        
-        <button class="btn btn-primary" (click)="upvote(i)">Upvote</button>
-        <button class="btn btn-primary" (click)="downvote(i)">Downvote</button>
-        <button class="btn btn-danger" (click)="toWritten(i)">Delete</button>
+        <div class="spacer"></div>
+        <div class="quote-details spacer">
+          <app-quote-details *ngIf="quote.showDescription" [quote]="quote" ></app-quote-details>
+        </div>
+        <div class="quote-votes">
+          <button class="btn btn-primary" (click)="upvote(i)">Upvote</button>
+          <button class="btn btn-primary" (click)="downvote(i)">Downvote</button>
+          <button class="btn btn-danger" (click)="toWritten(i)">Delete</button>
         <hr>
+        </div>
+      </div>
       </div>
     </div>
     <p *ngIf="quotes.length > 5">You have too many quotes</p>
   </div>
 
-  <div class="col-md-5">
+  <div class="col-md-4 col-lg-5 col-sm-2">
     <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-  </div>
 </div>
+</div>
+
+
 
 

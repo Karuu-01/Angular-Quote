@@ -24,6 +24,16 @@ To access this project on your local files, you can clone it using these steps
   - Upvote or downvote a quote.
   - Delete a quote
   - See the number of upvotes and number of downvotes for each quote.
+  # Live Site
+View [Live] ( https://github.com/Karuu-01/Pizza-Hut)
+# Technologies Used
+1. HTML
+1. CSS
+1. JAVASCRIPT
+1. jQUERY
+1. ANGULARJS
+1. BOOTSRAP
+1. GIT
 # Quote
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.

@@ -25,7 +25,7 @@ To access this project on your local files, you can clone it using these steps
   - Delete a quote
   - See the number of upvotes and number of downvotes for each quote.
   # Live Site
-View [Live] ( https://github.com/Karuu-01/Pizza-Hut)
+View [Live] ( https://github.com/Karuu-01/Angular-Quote)
 # Technologies Used
 1. HTML
 1. CSS

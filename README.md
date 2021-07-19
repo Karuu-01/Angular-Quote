@@ -30,7 +30,6 @@ View [Live] ( https://github.com/Karuu-01/Angular-Quote)
 1. HTML
 1. CSS
 1. JAVASCRIPT
-1. jQUERY
 1. ANGULARJS
 1. BOOTSRAP
 1. GIT

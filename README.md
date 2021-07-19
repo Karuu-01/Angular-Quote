@@ -18,7 +18,12 @@ To access this project on your local files, you can clone it using these steps
 # BDD
 ## User Stories 
 ### As as customer, one will be able to do the following,
+ - As a user I would like to:
 
+  - Create a new quote.
+  - Upvote or downvote a quote.
+  - Delete a quote
+  - See the number of upvotes and number of downvotes for each quote.
 # Quote
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.

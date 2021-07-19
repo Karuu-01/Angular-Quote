@@ -1,3 +1,7 @@
+# Project Name
+ - Quote-App,
+# Project Description
+ - This Website is meant to create an application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational. 
 # Quote
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.

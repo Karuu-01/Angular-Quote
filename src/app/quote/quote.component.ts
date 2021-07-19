@@ -18,7 +18,29 @@ export class QuoteComponent implements OnInit {
     new Quote(6,'Conversation should be pleasant without scurrility, witty without affectation, free without indecency, learned without conceitedness, novel without falsehood.','William Shakespeare',new Date(2021,7,18)),
     new Quote (7,'What we do is less than a drop in the ocean. But if it were missing, the ocean would lack something..','Mother Teresa',new Date(2021,7,18))
   ];
+  preNum!:number
+  lastNum!:number
+  counter!:number
   
+  upvote(i: number){
+    this.quotes[i].upvotes+=1
+  }
+  downvote(i:number){
+    this.quotes[i].downvotes+=1
+  }
+  toWritten(i: number){
+    this.quotes.splice(i, 1)
+  }
+  highestUpvote(){
+    this.preNum = 0
+    this.lastNum = 0
+
+    for(this.counter=0 ; this.counter < this.quotes.length; this.counter++) {
+      this.lastNum = this.quotes[this.counter].upvotes;
+      if(this.lastNum > this.preNum){this.preNum = this.lastNum}
+    }
+    return this.preNum
+  }
   toggleDetails(index: any){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
@@ -39,6 +61,7 @@ export class QuoteComponent implements OnInit {
     this.quotes.push(quote)
   }
   color = '';
+
   constructor() { }
 
   ngOnInit() {

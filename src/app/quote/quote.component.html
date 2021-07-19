@@ -5,17 +5,18 @@
   <div class="row">
     <div class="col-md-6">
       <div *ngFor="let quote of quotes; let i = index">
-        <h6 id="{{ i }}" [appHighlight>
-          {{ quote.name }} due on {{ quote.completeDate | date | uppercase }}
-        </h6>
+        <h6 id="{{ i }}" appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">{{ quote.name }} due on {{ quote.completeDate | date | uppercase }}</h6>
+        <p *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">{{ quote.name }} due on {{quote.completeDate | date | uppercase }}</p>
         <button (click)="toggleDetails(i)" class="btn btn-primary">
           Toggle Details
         </button>
-        <app-quote-details
-          *ngIf="quote.showDescription"
-          [quote]="quote"
-          (isWritten)="writtenQuote($event, i)"
-        ></app-quote-details>
+
+        <app-quote-details *ngIf="quote.showDescription" [quote]="quote" ></app-quote-details>
+        
+        <button class="btn btn-primary" (click)="upvote(i)">Upvote</button>
+        <button class="btn btn-primary" (click)="downvote(i)">Downvote</button>
+        <button class="btn btn-danger" (click)="toWritten(i)">Delete</button>
+        <hr>
       </div>
     </div>
     <p *ngIf="quotes.length > 5">You have too many quotes</p>
@@ -25,3 +26,5 @@
     <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   </div>
 </div>
+
+

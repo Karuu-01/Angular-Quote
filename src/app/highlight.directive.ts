@@ -6,21 +6,8 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class HighlightDirective {
 
-  constructor(private el: ElementRef) { }
-    @Input() defaultColor = '';
-
-    @Input('appHighlight') highlightColor = '';
-   
-
-   @HostListener('mousenter') onMouseEnter() {
-     this.highlight(this.highlightColor || this.defaultColor || 'red')
-   }
-   @HostListener('mouseleave') onMouseLeave() {
-    this.highlight(' ')
-  }
-
-  private highlight(color: string) {
-    this.el.nativeElement.style.backgroundColor = color;
+  constructor(elem: ElementRef) { 
+    elem.nativeElement.style.backgroundColor = "blue";
   }
 
   
